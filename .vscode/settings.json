@@ -1,0 +1,47 @@
+{
+    // 自動保存（短い遅延後に保存）
+    "files.autoSave": "afterDelay",
+
+    // ファイル保存時にコードを自動フォーマット
+    "editor.formatOnSave": true,
+
+    // 空白文字を全て表示
+    "editor.renderWhitespace": "all",
+
+    // 括弧を自動で閉じる
+    "editor.autoClosingBrackets": "always",
+
+    // デフォルトフォーマッターをPrettierに設定
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+    // Prettier設定：タブ幅を4、スペースを使用
+    "prettier.tabWidth": 4,
+    "prettier.useTabs": false,
+
+    // 改行コードをLFに固定
+    "files.eol": "\n",
+
+    // Pythonの設定
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll": "explicit", // 全ての修正を適用
+            "source.organizeImports": "explicit" // インポートを整理
+        },
+        "editor.defaultFormatter": "charliermarsh.ruff" // Ruffを使用
+    },
+
+    // Mypyの型チェック設定
+    "mypy-type-checker.args": ["--disallow-untyped-defs"], // 型注釈が必須
+    "mypy-type-checker.importStrategy": "fromEnvironment", // 環境からインポート
+
+    // カラーテーマとアイコンテーマの設定
+    "workbench.colorTheme": "Dracula Theme", // テーマ：Monokai
+    "workbench.iconTheme": "material-icon-theme", // アイコン：Material Icon Theme
+
+    // Python仮想環境のインタプリタパスを設定
+    "python.defaultInterpreterPath": "${workspaceFolder}/venv/bin/python",
+
+    // 辞書に含める単語
+    "cSpell.words": ["Flet", "mypy", "pycache", "venv"]
+}

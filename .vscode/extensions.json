@@ -1,0 +1,49 @@
+{
+    // 推奨拡張機能の一覧
+    "recommendations": [
+        // 日本語言語パック
+        "ms-ceintl.vscode-language-pack-ja",
+
+        // Pythonデバッグツール
+        "ms-python.debugpy",
+
+        // Python拡張機能
+        "ms-python.python",
+
+        // Python用型チェックツール
+        "ms-python.vscode-pylance",
+
+        // ruff フォーマッタ,リント,インポート整列ツール
+        "charliermarsh.ruff",
+
+        // 静的型チェックツール
+        "ms-python.mypy-type-checker",
+
+        // Fletのコントロールラッパー 開発を補助
+        "sobytes.flet-control-wrap",
+
+        // パス補完支援ツール
+        "christian-kohler.path-intellisense",
+
+        // docstring自動生成ツール
+        "njpwerner.autodocstring",
+
+        // Prettierコードフォーマッター
+        "esbenp.prettier-vscode",
+
+        // 全角スペース検出ツール
+        "mosapride.zenkaku",
+
+        // インデントを色分け表示
+        "oderwat.indent-rainbow",
+
+        // エラーをインラインで表示
+        "usernamehw.errorlens",
+
+        // スペルチェックツール
+        "streetsidesoftware.code-spell-checker",
+
+        // マテリアルアイコンテーマ
+        "pkief.material-icon-theme"
+    ]
+}

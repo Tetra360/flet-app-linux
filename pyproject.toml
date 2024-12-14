@@ -1,0 +1,26 @@
+[tool.ruff]
+# 対応するPythonバージョンを指定（Python 3.13）
+target-version = "py313"
+
+# コードスタイル設定
+line-length = 120  # 行ごとの最大文字数制限
+indent-width = 4   # インデント幅を4スペースに設定
+
+[tool.ruff.lint]
+# チェックするエラーの種類
+select = [
+    "ALL"
+]
+
+# 無視するエラーの種類（過剰なルールの場合必要に応じて調整）
+ignore = [
+    "D",
+    "PGH003",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]  # 未使用インポートを無視
+
+
+[tool.mypy]
+ignore_missing_imports = true
