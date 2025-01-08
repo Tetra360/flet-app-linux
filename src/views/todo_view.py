@@ -23,6 +23,15 @@ class TodoView(ft.Column):
             filter_tasks (Callable[[ft.ControlEvent], None]): フィルター変更時のコールバック
         """
         super().__init__()
+
+        # 初期スタイルの設定 (ここで色やサイズを指定)
+        self.clear_completed_button = ft.OutlinedButton(
+            "Clear completed",
+            on_click=clear_completed,
+            style=ft.ButtonStyle(color="#a0cafd"),  # 初期スタイルを設定
+            width=150,
+        )
+
         self.new_task_input = ft.TextField(
             hint_text="What needs to be done?",
             on_submit=add_task,
@@ -47,7 +56,7 @@ class TodoView(ft.Column):
                 alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
                 controls=[
                     self.items_left,
-                    ft.OutlinedButton("Clear completed", on_click=clear_completed),
+                    self.clear_completed_button,  # ボタンの参照を保持
                 ],
             ),
         ]
@@ -91,3 +100,21 @@ class TodoView(ft.Column):
         """
         self.items_left.value = f"{count} items left"
         self.update()
+
+    def set_clear_completed_button_color(self, current_filter: str) -> None:
+        """
+        Clear completedボタンの色を更新します。
+
+        Args:
+            current_filter (str): 現在選択されているフィルター
+        """
+        # デフォルトは基本カラーに設定
+        color = "#a0cafd"
+
+        # "completed"タブの時だけオレンジ色に設定
+        if current_filter == "completed":
+            color = ft.colors.ORANGE
+
+        # ボタンスタイルの更新
+        self.clear_completed_button.style = ft.ButtonStyle(color=color)
+        self.update()  # 再描画を呼び出し

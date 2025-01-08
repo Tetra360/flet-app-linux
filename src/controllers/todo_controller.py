@@ -113,5 +113,9 @@ class TodoController:
                 for task in filtered_tasks
             ],
         )
-        # 未完了のタスク数をビューに表示
+        # 未完了のタスク数を更新
         self.view.update_items_left(len([task for task in self.tasks if not task.completed]))
+
+        # 現在のフィルター状態に応じてボタンの色を更新
+        current_filter = self.filter_type
+        self.view.set_clear_completed_button_color(current_filter)
